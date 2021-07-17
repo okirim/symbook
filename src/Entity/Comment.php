@@ -43,11 +43,18 @@ class Comment
      */
     private $photo;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+
     public function getId(): ?int
     {
         return $this->id;
     }
-
+      public function __toString(){
+        return $this->email;
+    }
     public function getAuthor(): ?string
     {
         return $this->author;
@@ -104,6 +111,18 @@ class Comment
     public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }
