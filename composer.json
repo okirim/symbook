@@ -20,7 +20,8 @@
         "symfony/monolog-bundle": "^3.7",
         "symfony/proxy-manager-bridge": "5.3.*",
         "symfony/runtime": "5.3.*",
-        "symfony/yaml": "5.3.*"
+        "symfony/yaml": "5.3.*",
+        "twig/intl-extra": "^3"
     },
     "require-dev": {
         "symfony/debug-bundle": "^5.3",

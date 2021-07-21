@@ -52,7 +52,8 @@ class Comment
     {
         return $this->id;
     }
-      public function __toString(){
+    public function __toString()
+    {
         return $this->email;
     }
     public function getAuthor(): ?string
@@ -84,7 +85,7 @@ class Comment
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    public function setCreatedAt(\DateTimeInterface$createdAt): self
     {
         $this->createdAt = $createdAt;
 

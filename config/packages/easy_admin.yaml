@@ -1,6 +1,27 @@
 easy_admin:
-   entities:
-       # List the entity class name you want to manage
-       - App\Entity\Conference
-       - App\Entity\Comment
+  site_name: MeetUp
+  design:
+    menu:
+      - {route: 'homepage',label: 'Back To Website',icon: 'home'}
+      - {entity: 'Conference',label: 'Conferences',icon: 'comments'}
+      - {entity: 'Comment',label: 'Comments', icon: 'comments'}    
+  entities:
+    Conference:
+      class: App\Entity\Conference
+    Comment:
+      class: App\Entity\Comment
+      list: 
+        fields:
+          - author
+          - {property: 'email',type: 'email'}
+          - {property: 'createdAt',type: 'datetime'}
+        sort: ['createdAt','ASC']
+        filters: ['conference']
+        edit:
+          fields:
+            - {property: 'conference'}     
+            - author
+            - {property: 'email',type: 'email'}
+            - text             
+    
 
